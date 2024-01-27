@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>homework</title>
+    <style>
+        #main{
+
+        }
+        .preview{
+            width: 60.7%;
+            height: 400px;
+            border: 2px solid red;
+            display: inline-block;
+            overflow: hidden;
+        }
+        .main-img{
+            width: 100%;
+
+        }
+        
+        .text-red{
+            color:red;
+        }
+
+        .thumb{
+            width: 15%;
+            height: 120px;
+            box-shadow: 0px 0px 6px silver;
+            display: inline-block;
+            overflow: hidden;
+        }
+        .thumb-img{
+            width: 100%;
+        }
+
+        .form{
+            width: 300px;
+            background-color: wheat;
+            padding: 1em;
+            display: inline-block;
+        }
+
+        .input{
+            width: 80%;
+            display: block;
+            margin: 6px auto;
+            padding: 4px;
+        }
+
+        #show1{
+            display: inline-block;
+            background-color: aqua;
+            width: 500px;
+            padding: 1em;
+            vertical-align: top;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="preview text-red">
+        hello every body
+        <img id="main" class="main-img" src="./Teif Sakht Afzar (27).jpg" alt="">
+    </div>
+    <!-- <div>
+        <div class="thumb">
+            <img class="thumb-img" src="./Teif Sakht Afzar (27).jpg" alt="" onclick="main.src = this.src">
+        </div>
+        <div class="thumb">
+            <img class="thumb-img" src="./Teif Sakht Afzar (86).jpg" alt="" onclick="main.src = this.src">
+        </div>
+        <div class="thumb">
+            <img class="thumb-img" src="./emam-reza-38.jpg" alt="" onclick="main.src = this.src">
+        </div>
+        <div class="thumb">
+            <img class="thumb-img" src="Nature-Backgrounds (1).jpg" alt="" onclick="main.src = this.src">
+        </div>
+    </div> -->
+    <div>
+        <div class="thumb">
+            <img id="img1" class="thumb-img" src="./Teif Sakht Afzar (86).jpg" alt="" onclick="chenage_img('img1')">
+        </div>
+        <div class="thumb">
+            <img id="img2" class="thumb-img" src="./Teif Sakht Afzar (27).jpg" alt="" onclick="chenage_img('img2')">
+        </div>
+        <div class="thumb">
+            <img id="img3" class="thumb-img" src="./emam-reza-38.jpg" alt="" onclick="chenage_img('img3')">
+        </div>
+        <div class="thumb">
+            <img id="img4" class="thumb-img" src="Nature-Backgrounds (1).jpg" alt="" onclick="chenage_img('img4')">
+        </div>
+    </div>
+    <div class="form">
+        <input class="input" type="text" name="" id="username" placeholder="نام کاربری">
+        <input class="input" type="password" name="" id="pass" placeholder="رمز عبور">
+        <input class="input" type="password" name="" id="conf-pass" placeholder="تکرار رمز عبور">
+        <button style="margin: 0 auto;" onclick="show()">ثبت نام</button>
+        <button style="margin: 0 auto;" onclick="pass.type='text'">نمایش رمز عبور </button>
+    </div>
+    <div id="show1"></div>
+
+
+    <script>
+
+        function chenage_img(p){
+            var x = document.getElementById(p).src;
+            document.getElementById('main').src = x
+        }
+
+        function show() {
+            // console.log(document.getElementById('username').value)
+            var username = document.getElementById('username').value
+            var password = document.getElementById('pass').value
+            var confirm = document.getElementById('conf-pass').value
+            
+            // show1.innerHTML = username+' '+password+' '+confirm
+
+            var result = `<p style="direction: rtl; text-align: right;">
+                    <i> نام کاربری :  </i> <strong> ${username} </strong>
+                </p>
+                <p style="direction: rtl; text-align: right;">
+                    <i> رمز عبور  :  </i> <strong> ${password} </strong>
+                </p>
+                <p style="direction: rtl; text-align: right;">
+                    <i> تکرار رمز عبور  :  </i> <strong> ${confirm} </strong>
+                </p>`;
+
+            show1.innerHTML = result;
+            
+        }
+    </script>
+</body>
+</html>

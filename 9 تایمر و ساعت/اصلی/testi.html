@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+
+*{
+ box-sizing: border-box;
+ margin: 0;
+ padding: 0;
+}
+
+h1 {
+ font-weight: normal;
+}
+
+li {
+ display: inline-block;
+ font-size: 1.5em;
+ list-style-type: none;
+ padding: 1em;
+ text-transform: uppercase;
+}
+
+li span {
+ display: block;
+ font-size: 4.5rem;
+}
+
+html, body {
+ height: 100%;
+ margin: 0;
+}
+
+body {
+ -webkit-box-align: center;
+ -ms-flex-align: center;
+ align-items: center;
+ background-color: #ffd54f;
+ display: -webkit-box;
+ display: -ms-flexbox;
+ display: flex;
+}
+
+.container {
+ color: #333;
+ margin: 0 auto;
+ padding: 0.5rem;
+ text-align: center;
+}
+
+</style>
+</head>
+<body>
+
+<div class="container">
+ <h1>زمان باقی مانده تا شروع مسابقه</h1>
+  <ul>
+   <li><span id="days"></span>روز</li>
+   <li><span id="hours"></span>ساعت</li>
+   <li><span id="minutes"></span>دقیقه</li>
+   <li><span id="seconds"></span>ثانیه</li>
+  </ul>
+</div>
+
+<script>
+
+var second = 1000,
+  minute = second * 60,
+  hour = minute * 60,
+  day = hour * 24;
+  
+var countDown = new Date('Sep 25, 2021 00:00:00').getTime(), //تاریخ اجرای مسابقه
+x = setInterval(function() {    
+  let now = new Date().getTime(),
+  distance = countDown - now;
+
+  // مچ فلور برای رند کردن عدد به کار می رود
+  document.getElementById('days').innerText = Math.floor(distance / (day)),
+  document.getElementById('hours').innerText = Math.floor((distance % (day)) / (hour)),
+  document.getElementById('minutes').innerText = Math.floor((distance % (hour)) / (minute)),
+  document.getElementById('seconds').innerText = Math.floor((distance % (minute)) / second);
+	 // console.log(document.getElementById('days').Math)
+ // وقتی زمان تمام شد
+if (distance < 0) {
+ clearInterval(x);
+ alert("مسابقه شروع شده است");
+}
+
+}, second)
+
+</script>
+
+</body>
+</html>

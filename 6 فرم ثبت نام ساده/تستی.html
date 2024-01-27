@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+
+body{
+ background-color:#f2f2f2;
+ direction:rtl;
+}
+
+.mybox{
+ background-color:#fff;
+ box-shadow: 2px 5px 30px rgba(0,0,0,.1);
+ padding:10px;
+ text-align:center;
+}
+
+h3#Result{
+ color:blue;
+}
+
+</style>
+</head>
+<body>
+
+<div class="mybox">
+
+<h3>نام کاربری و رمز را وارد نمایید</h3>
+<p>نام کاربری : free-learn</p>
+<p>رمز : 12345</p>
+<p><input type="text" id="User_Name" placeholder="نام کاربری در اینجا"></p>
+<p><input type="password" id="User_Password" placeholder="رمز در اینجا"></p>
+<button onclick="Check();">بررسی کن</button>
+<h3 id="Result"></h3>
+
+</div>
+
+<script>
+
+function Check(){
+ // تعریف متغیرها
+ var my_user_name, my_user_password, username, userpassword, result;
+ 
+ // گرفتن چیزی که کاربر وارد میکنه
+ username = document.getElementById("User_Name").value;
+ userpassword = document.getElementById("User_Password").value;
+ 
+ // گرفتن تگ اچ 3 از صفحه برای نمایش خروجی
+ result = document.getElementById("Result");
+ 
+ // تعریف نام کاربری و رمز اصلی
+ my_user_name = "amir";
+ my_user_password = "amir";
+ 
+ // ایجاد شرط های مختلف برای چک کردن نام کاربری و رمز
+ if ( username == "" && userpassword == "" ){
+  result.innerHTML = "هیچی خو وارد نکردی";
+ }
+ else if ( username == my_user_name && userpassword != my_user_password ){
+  result.innerHTML = "نام کاربری درسته ولی رمز اشتباهه";
+ }
+ else if ( username != my_user_name && userpassword == my_user_password ){
+  result.innerHTML = "نام کاربری اشتباه می باشد ولی رمز صحیح می باشد";
+ }
+ else if ( username == my_user_name && userpassword == my_user_password ){
+  result.innerHTML = "تبریک، نام کاربری و رمز صحیح می باشد";
+ }
+ else{
+  result.innerHTML = "نام کاربری یا رمز اشتباه می باشد";
+ }
+
+}
+
+</script>
+
+</body>
+</html>

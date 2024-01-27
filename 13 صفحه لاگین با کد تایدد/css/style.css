@@ -1,0 +1,169 @@
+* {
+  /*چون یک وبسایت فارسی هستیم و باید راست چین باشه */
+  direction: rtl;
+
+  /*یا بردر بدیم */
+  /*باعث میشه که مثلا وقتی به یک چیز مارجین یا پدیننیگ بدیم انجام نشه و مثلا ویت و هیت عکس وووو غیره*/
+  box-sizing: border-box;
+}
+
+@media screen and (max-width: 750px) {
+  body {
+    font-size: 10px;
+    margin: 0;
+  }
+}
+
+/* for all ducument */
+body {
+  /* background-image: url("../img/1\(1\).jpg"); */
+  direction: rtl;
+  font-size: 16px;
+  margin: 0;
+}
+
+/* all my form rejester */
+.main-sec {
+  /* margin: 0 auto; */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+}
+.main-sec .main-div {
+  background-image: linear-gradient(90deg, #ca9d3bc9, #811773be);
+  border-radius: 27px 27px 37px 37px / 27px 27px 37px 37px;
+  box-shadow: 1px 1px 12px black;
+}
+.main-sec .main-div .main-form-input {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 30px;
+}
+.main-sec .main-div .main-form-input input {
+  margin: 15px;
+  outline-style: none;
+  padding: 10px;
+  color: white;
+  width: 100%;
+  border-radius: 20px;
+  /* border: none; */
+  background: none;
+  /* border: 2px solid rgb(255, 255, 255); */
+}
+.jq-add-input1 {
+  border: 2px solid rgb(221, 67, 67);
+}
+.main-sec .main-div .main-form-input .showPass {
+  font-size: 10px;
+  cursor: pointer;
+  color: white;
+}
+
+/* clsss */
+.main-sec .main-div .error {
+  margin: 10px;
+  padding: 6px;
+  color: rgb(242, 233, 235);
+  background-color: rgba(189, 64, 75, 0.644);
+  width: 90%;
+  border-radius: 11px;
+  text-align: center;
+  font-size: 9.4px;
+  font-weight: 900;
+  display: none;
+}
+
+/* id */
+/* .main-sec .main-div .error {
+  margin: 10px;
+  padding: 10px;
+  color: rgb(230, 24, 62);
+  background-color: rgba(211, 37, 52, 0.685);*
+  width: 85%;
+  border-radius: 16px;
+  text-align: center;
+  font-size: 10px;
+  display: none;*
+} */
+
+.main-sec .main-div .sends {
+  margin: 10px;
+  display: flex;
+  width: 70%;
+}
+
+.main-sec .main-div .sends input {
+  outline-style: none;
+  padding: 10px;
+  color: rgb(255, 255, 255);
+  border-radius: 10px;
+  border: none;
+  position: relative;
+}
+
+.main-sec .main-div .sends input:nth-child(1) {
+  border: 2px solid #39721391;
+  background-color: #5be4a491;
+}
+
+/* for time */
+.con {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+.con .border {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-size: 20px;
+  border: initial 2px solid black;
+  box-shadow: 1px 1px 4px 5px;
+  width: 50%;
+  height: 300px;
+  border-radius: 10px;
+  background-image: linear-gradient(90deg, #71b1d6c9, #ecececbe);
+}
+
+.con .border .input {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.con .border .input .inputch {
+  background-color: rgba(226, 225, 233, 0.3);
+  border-radius: 20px;
+  border: none;
+  display: block;
+  background: none;
+  border: 2px solid rgb(255, 255, 255);
+  padding: 10px;
+  color: white;
+  width: 100%;
+  outline-style: none;
+  margin: 5px;
+}
+
+.con .border .btn {
+  color: aliceblue;
+  margin: 6px;
+}
+
+.con .border .btn .btnch {
+  padding: 7px;
+  background-color: rgba(225, 225, 225, 0.2);
+  border: none;
+  border-radius: 8px;
+  margin: 4px;
+}
+
+

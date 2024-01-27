@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="fa">
+
+<head>
+    <title>time</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            direction: rtl;
+            font-size: .9em;
+        }
+
+        body {
+            -webkit-box-align: center;
+            -ms-flex-align: center;
+            align-items: center;
+        }
+    </style>
+
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+
+    <div class="con">
+        <diV class="border">
+
+            <div class="input">
+                <!-- show send the code -->
+                <div style="height: 20px;  font-weight: 900;  width: 90%;  padding: 10px;   margin: 30px;" id="code">
+                </div>
+
+                <!-- input -->
+                <input class="inputch" type="text" id="text_Num" title="کد ارسال شده را وارد کنید">
+
+                <!-- show timer -->
+                <label style="height: 20px; width:50%;" id="countdown"></label>
+
+                <!-- main btn -->
+                <div class="btn">
+                    <button class="btnch" id="btn" onclick="timi()">ارسال کد</button>
+
+                    <!-- show again btn -->
+                    <div id="show"></div>
+
+                    <button class="btnch" id="" onclick="send_info()">تایید</button>
+
+                </div>
+
+
+
+
+            </div>
+
+        </div>
+    </div>
+
+
+    <script>
+
+        function send_info() {
+            var v_text_Num = document.getElementById('text_Num').value;
+            console.log(v_text_Num)
+            console.log(numMach);
+            if (v_text_Num == numMach || v_text_Num == numMach1) {
+                // countdown.innerHTML = `great`
+                alert("great")
+            } else {
+                // countdown.innerHTML = `Not great`
+                alert("Not great")
+            }
+        }
+
+        var x = 120;
+
+        function timi() {
+            var numMach = code.textContent = Math.floor(Math.random() * 99999) + 10000;
+
+
+            var myInterval = setInterval(() => {
+
+                x = x - 1;
+
+                document.getElementById('btn').disabled = true;
+                //console.log(x)
+                countdown.innerHTML = x
+                if (x == 115) {
+                    countdown.style.color = 'red'
+                }
+                if (x == 110) {
+                    countdown.style.color = 'yellow'
+                }
+                if (x == 100) {
+                    countdown.style.color = 'rgb(69, 228, 220)'
+                }
+                if (x == 90) {
+                    countdown.style.color = 'black'
+                }
+
+                if (x == 0) {
+                    x = 0
+                    clearInterval(myInterval);
+                    btn.style.display = 'none'
+                    show.innerHTML = ` <button class="btnch" id="btn1" onclick="timi1()">ارسال مجدد کد</button> `
+                    countdown.innerHTML = ''
+
+
+                }
+
+
+
+            }, 10);
+
+        }
+
+        //
+
+        var s = 120;
+        function timi1() {
+            var numMach1 = code.textContent = Math.floor(Math.random() * 99999) + 10000;
+
+            var myInterval1 = setInterval(() => {
+
+                s = s - 1;
+                //console.log(s)
+
+
+                document.getElementById('btn1').disabled = true;
+
+                countdown.innerHTML = s
+                if (s == 115) {
+                    countdown.style.color = 'red'
+                }
+                if (s == 110) {
+                    countdown.style.color = 'yellow'
+                }
+                if (s == 100) {
+                    countdown.style.color = 'rgb(69, 228, 220)'
+                }
+                if (s == 90) {
+                    countdown.style.color = 'black'
+                }
+
+                if (s <= -1) {
+                    s = 0
+                    document.getElementById('btn1').disabled = true;
+                    countdown.innerHTML = ` <div  style="font-size: 9px; color:red;" >مهلت شما به پایان رسید</div>`
+                }
+
+            }, 10);
+
+
+
+
+        }
+
+
+
+
+    </script>
+</body>
+
+</html>

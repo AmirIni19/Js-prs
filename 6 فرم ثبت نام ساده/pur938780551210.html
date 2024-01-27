@@ -1,0 +1,140 @@
+<!DOCTYPE HTML>
+<html dir="rtl" lang="fa">
+<head>
+	<meta http-equiv="content-type" content="text/html" />
+	<meta name="author" content="thunderspear" />
+
+	<title>Sign up</title>
+    
+    <style>
+        #body {
+            margin: 0px;
+            background-image: url(./background.jpg);
+            background-size: cover;
+        }
+        #main {
+            position: relative;
+            top: 60px;
+            margin-right: auto;
+            margin-left: auto;
+            width: 30%;
+            height: 640px;
+            background-color: white;
+            border-radius: 25px;
+        }
+        .input {
+            border-color: aquamarine;
+            border-radius: 15px;
+            margin-right: 19%;
+            margin-top: 35px;
+            width: 60%;
+            height: 40px;
+            font-weight: 400;
+            font-size: 16px;
+        }
+        .button {
+            margin-top: 50px;
+            margin-right: 20px;
+            border-style: outset;
+            border-width: 2px;
+            border-radius: 15px;
+            width: 28%;
+            height: 48px;
+            background-color: rgb(167, 65, 255);
+            text-align: center;
+            font-family: Nazanin;
+            font-size: 20px;
+            color: white;
+        }
+        .error {
+            font-family: Nazanin;
+            font-weight: 300; 
+            font-size: 15px; 
+            text-align: center;
+            color: red; 
+            margin-top: 20px;
+        }
+        .margin {
+            margin-right: 19%;
+        }
+    </style>
+</head>
+
+<body id="body">
+
+    <div id="main">
+        <div>
+            <h1 style="color: rgb(51, 51, 51); text-align: center; padding-top: 20px;;">���� �� ���� ������</h1>
+        </div>
+        
+        <div>
+            <form>
+                <input id="username" style="" onkeydown="cube(event)" class="input" type="text" placeholder="��� ������" />
+                <input id="email" style="" class="input" type="email" placeholder="�����" />
+                <input id="pass" class="input" type="password" placeholder="��� ����" />
+                <input id="passcheck" class="input" type="password" placeholder="ʘ��� ��� ����" /> 
+            </form>
+        </div>
+        
+        <div id="error" class=""></div>
+        
+        <button id="register" class="button margin" style="" onmouseover="color(register)" onmouseout="recolor(register)" onclick="checkInputs()">����</button>
+        
+        <button id="refresh" class="button" style="" onmouseover="color(refresh)" onmouseout="recolor(refresh)" onclick="refreshInputs()">��������</button>
+        
+        <div style="font: Nazanin; font-weight: 400; font-size: 15px; padding-right: 120px; padding-top: 60px;">
+            <a href="">��� ���� ��� �� ������ ���� ��Ͽ</a>
+        </div>
+    
+    </div>
+    
+    <script>
+        function color(x) {
+            x.attributes.style.value = 'background-color: rgb(170, 181, 19); box-shadow: 0 9px #999;'
+        }
+        function recolor(x) {
+            x.attributes.style.value = ''
+            
+        }
+        function cube() {
+            var x = event.key
+            if(x == '@' || x == '*' || x == '�' || x == '/' || x == '+' || x == '=' || x == '%' || x == '$' || x == '^' || x == '#' || x == '!'){
+                event.preventDefault()
+                error.attributes.class.value = 'error'
+                error.innerHTML = '���ǘ�� ��� ����'
+            }
+        }
+        function checkInputs() {
+            var x = username.textLength
+            if(x > 20){
+                username.attributes.style.value = 'color: red;'
+                username.value = '���ǘ�� ��� �� ����� ����'
+            }
+            
+            var e = email.textLength
+            if(e < 11){
+                email.attributes.style.value = 'color: red;'
+                email.value = '����� ���� ����' 
+            }
+            
+            var y = pass.value
+            var z = passcheck.value
+            if(y != z){
+                error.attributes.class.value = 'error'
+                error.innerHTML = 'ʘ��� ��� ���� ������ ���' 
+            }
+        }
+        function refreshInputs() {
+            username.attributes.style.value = ''
+            username.value = ''
+            email.attributes.style.value = ''
+            email.value = ''
+            pass.value = ''
+            passcheck.value = ''
+            error.innerHTML = ''
+            error.attributes.class.value = ''
+        }
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <title>بازی سنگ کاغذ قیچی</title>
+   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+   <style>
+*{
+    margin: 0;
+    padding: 0;
+    font-family: tahoma;
+}
+
+html,body{
+    height: 100%;
+
+}
+.main{
+position: relative;
+top: 50%;
+left: 50%;
+transform: translate(-50%, -50%);
+display: inline-block;
+}
+
+/*for see PC*/
+.select, .score{
+    text-align: center;
+}
+
+/*for me */
+.select span{
+width: 100px;
+height: 100px; 
+display: inline-block;
+
+/*becuse alamat neshane braye mous*/
+cursor: pointer;
+}
+
+/* for paper */
+.select .paper{ 
+    /*cover id for all pic*/
+background: url('./2.jpg') center/cover ;
+}
+.select .rock{ 
+    background: url('./1.jpg') center/cover ;
+}
+.select .scissor{ 
+    background: url('./3.jpg') center/cover ;
+}
+   </style>
+   <script>
+
+    //به هر اسپن زده شد , کلّس اون رو بگیر  و مقدارش رو در یو ذخیره کن 
+    $(function(){
+
+       
+        $(document).on('click','.your span', function(){
+            var you = $(this).attr('class');
+       
+             // مقدار کامپیوتر به صورت رندوم
+        var array = ['paper' , 'rock' , 'scissor'];
+
+
+        //حالا باید بگیم کدوم تیم اتیاز بیشتری کسب کرده
+        var yourScore = 0;
+        var pcScore = 0;
+
+        
+        // وقتی کاربر کلیک میکنه فقط اونی که کلیک کردیم پر رنگ تر بشه و بقیه کم رنگ
+        // در حالت عادی اپاسیتی 3
+        $('.your span').css('opacity' , 0.3)
+
+        //حالا اونی که انتخاب شده اپاسیتیش یک بشه 
+        $(this).css('opacity' , 1.0)
+        
+
+        var pc = array[Math.floor(Math.random()*array.length)
+        ]; 
+
+        // هر کلسی که میخای قرار بدی اول کلس قبلی شو پاک کن و. بعد یدونه اضافه کن
+        $('.pc span').attr("class",""); 
+        //  حالا نمایش رندوم 
+        $('.pc span').addClass(pc);
+        
+
+
+        
+        if(you == pc ){
+            yourScore +=0.5; 
+            pcScore +=0.5; 
+        }else if(you == "paper" && pc =="rock"){
+            yourScore++;
+        }else if(you == "rock" && pc =="scissor"){
+            yourScore++;
+        }else if(you == "scissor" && pc =="paper"){
+            yourScore++;
+        }else if(pc == "paper" && you =="rock"){
+            pcScore++;
+        }else if(pc == "rock" && you =="scissor"){
+            pcScore++;
+        }else if(pc == "scissor" && you =="paper"){
+            pcScore++;
+        }
+        // نمایش در اسکوربود
+        $('.yourScore').html(yourScore)
+        $('.pcScore').html(pcScore)
+        });
+    });
+</script>
+</head>
+<body>
+<!--for me-->
+<div class="main">
+
+    <div class="select your" >
+        <span class="paper" ></span>
+        <span class="rock" ></span>
+        <span class="scissor" ></span>
+    </div>
+
+    <!--for pc-->
+    <div class="select pc">
+        <span></span>
+    </div>
+
+    <!--for scorebod-->
+    <div class="score">
+        your Score: <span class="yourScore" >0</span><br>
+        PC Score: <span class="pcScore" >0</span>
+    </div>
+
+</div>
+
+
+
+</body>
+</html>

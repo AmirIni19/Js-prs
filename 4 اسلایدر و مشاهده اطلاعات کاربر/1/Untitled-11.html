@@ -1,0 +1,170 @@
+<!DOCTYPE HTML>
+<html dir="rtl">
+<head>
+	<meta http-equiv="content-type" content="text/html" />
+	<meta name="author" content="thunderspear" />
+
+	<title>js sample</title>
+    <style>
+    #body {
+        margin: 0px;
+        background-image: url('./pattern.png');
+        background-repeat: repeat;
+    }
+    #image {
+        width: 960px; 
+        height: 540px;  
+        border-style: outset; 
+        border-width: 4px; 
+        margin-top: 50px; 
+        margin-right: auto; 
+        margin-left: auto;
+    }
+    #input {
+        border-color: rgb(44, 131, 255);
+        border-width: 4px;
+        border-style: ridge;
+        border-radius: 15px;
+        width: 230px;
+        height: 36px;
+        text-align: center;
+        font-weight: 400;
+        font-size: 18px;
+    }
+    </style>
+</head>
+
+<body id="body">
+
+<!--���� ��� ���-->
+
+    <div id="image">
+        <img src="./image1.jpg" title="McDonnell Douglas F-15E Strike Eagle" style="max-width: 100%; height: 100%;"/>
+    </div>
+    
+<!--���� ������ �����-->
+    
+    <div id="image1" style="display: inline-block; margin-top: 30px; margin-right: 227px; border-style: outset; border-width: 4px; width: 202.5px; height: 114px; background-color: white;">
+        <img  onclick="image1()" src="./image1.jpg" title="McDonnell Douglas F-15E Strike Eagle" style="max-width: 100%; height: 100%;"/>
+    </div>
+    
+    <div id="image2" style="display: inline-block; margin-right: 38px; border-style: outset; border-width: 4px; width: 202.5px; height: 114px; background-color: white;">
+        <img onclick="image2()" src="./image2.jpg" title="Boeing F/A-18E/F Super Hornet" style="width: 100%; height: 100%;"/>
+    </div>
+    
+    <div id="image3" style="display: inline-block; margin-right: 38px; border-style: outset; border-width: 4px; width: 202.5px; height: 114px; background-color: white;">
+        <img onclick="image3()" src="./image3.jpg" title="Sukhoi Su-57" style="max-width: 100%; height: 100%;"/>
+    </div>
+    
+    <div id="image4" style="display: inline-block; margin-right: 38px; border-style: outset; border-width: 4px; width: 202.5px; height: 114px; background-color: white;">
+        <img onclick="image4()" src="./image4.jpg" title="Sukhoi Su-57" style="width: 100%; height: 100%;"/>
+    </div>
+    
+<hr style="margin-top: 35px; margin-bottom: 35px;"/>
+    
+<!--���� ��� ���-->
+    <div style="display: inline-block;" id="username">
+        <input onclick="input1()" style="margin-right: 20px;" placeholder="��� ������" type="text" id="input" />
+    </div>
+    
+    <div style="display: inline-block;" id="name">
+        <input onclick="input2()" style="margin-right: 50px;" placeholder="��� � ��� �����ϐ�" type="text" id="input" />
+    </div>
+    
+    <div style="display: inline-block;" id="phone-number">
+        <input onclick="input3()" style="margin-right: 50px;" placeholder="����� �����" type="text" id="input" />
+    </div>
+    
+<br />
+    
+    <div style="margin-top: 35px; margin-right: 20px; padding-right: 8px; width: 500px; height: 160px; border-style: solid; border-width: 1px; background-color: white;">
+        ��� ������:<p id="us" style="display: inline-block; margin-right: 4px; font-family: Nazanin; font-size: 16px; font-weight: 600;"></p>
+<br />
+��� � ��� �����ϐ�:<p id="n" style="display: inline-block; margin-right: 4px; font-family: Nazanin; font-size: 18px; font-weight: 600;"></p>
+<br />
+       ����� �����:<p id="pn" style="display: inline-block; margin-right: 4px; font-family: Nazanin; font-size: 18px; font-weight: 600;"></p>
+    </div>
+    
+<hr style="margin-top: 35px; margin-bottom: 15px;"/>
+
+<!--���� ��� ���--> 
+
+    <p onclick="list()" style="display: inline-block; color: rgb(48,48,48); text-decoration: underline; font-family: Nazanin; font-size: 20px; font-weight: 700; margin-right: 20px;">���� �����</p> 
+    <p onclick="table()" style="display: inline-block; color: rgb(48,48,48); text-decoration: underline; font-family: Nazanin; font-size: 20px; font-weight: 700; margin-right: 60px;">���� �����</p>
+<br />
+    <div id="list" style="margin-right: 20px; border-style: groove; border-width: 3px; width: 600px; height: 200px; background-color: white;"> 
+        <div id="container" style="display: inline-block; width: 28%; height: 100%;">
+            <img id="profile" src="profile.jpg" style="max-width: 100%; height: 100%;"/>
+        </div>
+        
+        <div id="text" style="display: inline-block; width: 66%; height: 100%;">
+            <p id="content" style="display: inline-block; text-align: left; float: left; font-family: Nazanin; font-size: 16px; font-weight: 700; margin-right: 5px;">
+                intentions were strengthed when he enterd the Father
+                diniing-room, though, stricttly speakin, it was not a 
+                Father Superior had only two rooms alltogether; they
+                were, however, much larger and more comfortable than 
+                was no great luxury about the furnishng of
+                eithar. The furniture was of mohogany, covered with
+                the old-fashionned style of 1820 the floor was not even
+                He determined to drop his litigation with the
+                room at the moment was, of course, the beatifuly
+                served with little fish paties; then boiled fish
+            </p>
+        </div>
+    </div>
+
+    
+<!--Java Script codes-->
+    
+    <script>
+    //���� ��� ���
+    function image1() {
+        var x = document.getElementById('image1').innerHTML;
+        document.getElementById('image').innerHTML = x;
+    }
+    function image2() {
+        var x = document.getElementById('image2').innerHTML;
+        document.getElementById('image').innerHTML = x;
+    }
+    function image3() {
+        var x = document.getElementById('image3').innerHTML;
+        document.getElementById('image').innerHTML = x;
+    }
+    function image4() {
+        var x = document.getElementById('image4').innerHTML;
+        document.getElementById('image').innerHTML = x;
+    }
+    //���� ��� ���
+    function input1() {
+        var x = document.getElementById('username').children.input.value;
+        document.getElementById('us').textContent = x;
+    }
+    function input2() {
+        var x = document.getElementById('name').children.input.value;
+        document.getElementById('n').textContent = x;
+    }
+    function input3() {
+        var x = document.getElementById('phone-number').children.input.value;
+        document.getElementById('pn').textContent = x;
+    }
+    //���� ��� ���
+    function list() {
+        document.getElementById('list').style = "margin-right: 20px; border-style: groove; border-width: 3px; width: 600px; height: 200px; background-color: white;";
+        document.getElementById('container').style = "display: inline-block; width: 28%; height: 100%;"
+        document.getElementById('profile').style = "max-width: 100%; height: 100%;";
+        document.getElementById('text').style = "display: inline-block; width: 66%; height: 100%;";
+        document.getElementById('content').style = "display: inline-block; float: left; text-align: left; font-family: Nazanin; font-size: 16px; font-weight: 700; margin-right: 5px;"
+    }
+    function table() {
+        document.getElementById('list').style = "margin-right: 20px; border-style: groove; border-width: 3px; width: 200px; height: 550px; background-color: white;";
+        document.getElementById('container').style = "display: inline-block; float: top; width: 100%; height: 30%;"
+        document.getElementById('profile').style = "width: 100%; max-height: 100%;";
+        document.getElementById('text').style = "display: inline-block; width: 100%; height: 75%;";
+        document.getElementById('content').style = "display: inline-block; margin-top: 16px; white-space: normal; text-align: left; font-family: Nazanin; font-size: 16px; font-weight: 700;"
+    }
+    //console.log(document.getElementById('username').children.input.value)
+    //console.log(document.getElementById('us').textContent)
+    //����� ��� ���
+    </script>
+</body>
+</html>

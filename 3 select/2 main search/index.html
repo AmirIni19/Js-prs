@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>لیست سلکت شهرها</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+
+    <div class="flex_list">
+
+
+        <header>
+            <h1 style="font-size: 23px;" id="header-title">جستجو و انتخاب شهرهای ایران</h1>
+
+            <form id="search-form" action="">
+                <input type="text" onclick="" id="MyInput" placeholder="جستجو ..." >
+
+                <!-- <div id="sag">sag</div> -->
+                
+                <div class="show_select">
+                    <div class="city_1"></div>
+                    <div class="city_2"></div>
+                    <div class="city_3"></div>
+                    <div class="city_4"></div>
+                    <div class="city_5"></div>
+                    <div class="city_6"></div>
+                    <div class="city_7">
+                        <div class="show_select_child">
+                            <div>مازندران</div>
+                            <span>X</span>
+                         </div>
+                    </div>
+                </div>
+
+            </form>
+
+            <!-- <h2 id="Result"></h2> -->
+
+            <!-- <button onclick="Add_MyFocus()">فوکوس بروی اینپوت</button> -->
+            <!-- <input type="text" id="MyInput"> -->
+
+            <main class="main_list">
+                <h2 style="font-size: 15px ;">لیست شهر ها </h2>
+
+                <ul id="city-list">
+                    <!-- citys -->
+                    
+                    <!-- 1--> 
+                    <li class="city-item">
+                        <i title="انتخاب شهر" class="title">قم</i> 
+                        <span title="پاک کردن" class="delete-btn">پاک کردن</span>
+                    </li>
+
+                    <!-- 2 -->
+                    <li class="city-item">
+                        <i title="انتخاب شهر" class="title">تهران</i> 
+                        <span title="پاک کردن" class="delete-btn">پاک کردن</span>
+                    </li>
+
+                    <!-- 3 -->
+                    <li class="city-item">
+                        <i title="انتخاب شهر" class="title">تبریز</i> 
+                        <span title="پاک کردن" class="delete-btn">پاک کردن</span>
+                    </li>
+
+                    <!-- 4 -->
+                    <li class="city-item">
+                        <i title="انتخاب شهر" class="title">همدان</i> 
+                        <span title="پاک کردن" class="delete-btn">پاک کردن</span>
+                    </li>
+
+                    <!-- 5 -->
+                    <li class="city-item">
+                        <i title="انتخاب شهر" class="title">شیراز</i> 
+                        <span title="پاک کردن" class="delete-btn">پاک کردن</span>
+                    </li>
+
+                    <!-- 6 -->
+                    <li class="city-item">
+                        <i title="انتخاب شهر" class="title">سنندج</i> 
+                        <span title="پاک کردن" class="delete-btn">پاک کردن</span>
+                    </li>
+
+                    <!-- 7 -->
+                    <li class="city-item">
+                        <i title="انتخاب شهر" class="title">مازندران</i> 
+                        <span title="پاک کردن" class="delete-btn">پاک کردن</span>
+                    </li>
+
+                </ul>
+
+            </main>
+
+        </header>
+
+
+
+        <section class="add-to-do">
+            <h1 style="font-size: 23px;">اضافه کردن شهرهای ایران</h1>
+            <form id="add-form" action="">
+                <input type="text" name="" id="" placeholder="اضافه کردن ...">
+                <button title="اضافه کردن شهر">اضافه کردن</button>
+            </form>
+        </section>
+
+
+
+    </div>
+
+    <!-- 
+    <hr>
+    <hr>
+
+    <label for="id_label_single">
+        <input type="text" name="" id="">
+        Click this to highlight the single select element
+        <select class="js-example-basic-multiple" name="states[]" multiple="multiple"  style="width: 25%">
+            <option value="AL">qom</option>
+            <option value="AL">tabriz</option>
+            <option value="AL">hamedan</option>
+            <option value="AL">yazd</option>
+            <option value="AL">tehran</option>
+            <option value="AL" disabled="disabled">sanandaj</option>
+
+            <option value="WY">Wyoming</option>
+        </select>
+    </label> -->
+
+    <script src="../1 search/js/jquery-3.6.0.min.js"></script>
+    <script src="./script.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,93 @@
+@font-face {
+  font-family: Estedad;
+  /* src: url(./Iranian\ Sans.ttf); */
+  src: url(./Estedad[wght\,kshd].ttf);
+}
+*{
+  font-family: Estedad;
+}
+body {
+  max-width: 500px;
+  margin: 0px auto;
+  /* font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif; */
+  direction: rtl;
+}
+
+header {
+  text-align: center;
+  padding: 30px 0px;
+  color: #2980b9;
+  font-family: Impact;
+}
+
+header #search-form input[type="text"] {
+  padding: 10px;
+  width: 100%;
+  font-size: 1.1em;
+}
+
+main{
+  border: .1px solid rgba(0, 0, 0, 0.13);
+  padding: 10px;
+  border-radius: 10px;
+}
+main #to-do-list {
+  padding-left: 0;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+#to-do-list li {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  padding-bottom: 10px;
+  font-size: 1.1em;
+}
+
+#to-do-list li .title {
+  background-color: #4d4d4d;
+  color: white;
+  height: 33px;
+  width: 70%;
+  border-radius: 5px;
+  padding: 6px;
+}
+
+#to-do-list li .delete-btn {
+  background-color: #dd2222;
+  color: white;
+  padding: 5px;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 17%;
+}
+
+.add-to-do {
+  padding-top: 30px;
+}
+
+.add-to-do #add-form {
+  display: flex;
+  justify-content: space-around;
+  flex-direction: row;
+}
+
+.add-to-do #add-form input[type="text"] {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  font-size: 1.1em;
+}
+
+.add-to-do #add-form button {
+  background: none;
+  border: 3px solid #2980b9;
+  color: #2980b9;
+  font-family: Impact;
+  outline: none;
+  font-size: 16px;
+  cursor: pointer;
+  width: 135px;
+}

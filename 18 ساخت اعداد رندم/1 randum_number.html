@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1 to 30</title>
+    <style>
+        body {
+            background-image: linear-gradient(to bottom, rgb(208, 233, 235), rgb(118, 224, 250));
+        }
+
+        .con {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            height: 100vh;
+            width: 100%;
+        }
+
+        .con .all_ch {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            border: .1px solid rgba(0, 0, 0, 0.11);
+            background-color: rgba(250, 235, 215, 0.267);
+            box-shadow: inset 0px 0px 2px 1px rgba(245, 245, 220, 0.226);
+            border-radius: 12px;
+            height: 50%;
+            width: 60%;
+        }
+
+        .con .all_ch .ch_con {
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 25px;
+            font-weight: bold;
+            text-align: center;
+            color: rgb(68, 68, 68);
+        }
+
+        .con .all_ch .reload {
+            padding: 15px;
+            margin: 8px;
+            background-color: rgba(240, 248, 255, 0.938);
+            border: none;
+            font-family: 'Times New Roman', Times, serif;
+            font-size: 15px;
+            font-weight: bold;
+            text-align: center;
+            color: rgb(68, 68, 68);
+            border-radius: 10px;
+            box-shadow: 0px 0px 3px rgba(245, 245, 220, 0.445);
+        }
+    </style>
+</head>
+
+<body>
+
+    <section class="con" id="con">
+        <div class="all_ch" id="all_ch">
+            <h2 class="ch_con">اینجا محل اعداد رندمه</h2>
+            <!-- <div class="ch_con">1</div>
+            <div class="ch_con">1</div>
+            <div class="ch_con">1</div>
+            <div class="ch_con">1</div> -->
+
+        </div>
+    </section>
+
+    <script type="text/javascript">
+        var ZeroToOne = Math.random(); // console.log(ZeroToOne);
+        var Zero_To_A_Lot_of_Number = Math.random() * 100; // console.log(Zero_To_A_Lot_of_Number);
+        var Zero_To_A_Lot_of_Number_Intiger = Math.floor(Math.random() * 100); // console.log(Zero_To_A_Lot_of_Number_Intiger);
+
+        function myRandom(start, end) {
+            randomNumber = start + Math.floor(Math.random() * (end - start));
+            return randomNumber;
+        }
+
+        document.getElementById('all_ch').innerHTML +=
+            `
+            <div class="ch_con">${myRandom(0, 3)}</div>
+            <div class="ch_con">${myRandom(10, 20)}</div>
+            <div class="ch_con">${myRandom(100, 1000)}</div>
+            <div class="ch_con">${myRandom(1000, 2000)}</div>
+            
+            <button class="reload" id="reload" onclick="reload_page()">بزن عدد عوض شه</button>
+        `
+
+        // document.write(myRandom(0, 3) + '<br>');
+        // document.write(myRandom(10, 20) + '<br>');
+        // document.write(myRandom(100, 1000) + '<br>');
+        // document.write(myRandom(1000, 2000) + '<br>');
+
+
+        // that is for reload page
+        function reload_page() {
+            window.location.reload();
+
+        }
+    </script>
+</body>
+
+</html>

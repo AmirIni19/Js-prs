@@ -1,0 +1,48 @@
+<!DOCTYPE HTML>
+<head>
+<style>
+
+</style>
+</head>
+<body>
+
+<div style="margin: auto; width: 300px; font-size: 50px;">
+
+<span id="spHour">0</span>:
+<span id="spMinutes">0</span>:
+<span id="spSeconds">0</span>
+
+</div>
+
+<script>
+// متغیر سراسری
+var hour = 0 , minutes=0 , seconds=0
+
+
+// حالا باید تایم بهش بدیم و دستورات مان
+setInterval(function(){
+   
+   seconds -= 1
+   
+    
+    // اگر ثانیه ما بزرگتر مساوی با شصت شد انجام بده
+    if(seconds >= 60){
+         
+    // ینی حالا شصت ثانیه شد اون رو صفرکن و
+    seconds = 60;
+    // و یه دقیقه یکی اضافه کن
+    minutes -= 1;
+    }
+    if(minutes >= 60){
+        minutes=60;
+        hour -= 1;
+    }
+    // حالا باید مقادیرشون رو نشون یدهیم
+    document.getElementById('spHour').innerHTML = hour ;
+    document.getElementById('spMinutes').innerHTML = minutes ;
+    document.getElementById('spSeconds').innerHTML = seconds ;
+    },1000);
+</script>
+</body>
+</html>
+

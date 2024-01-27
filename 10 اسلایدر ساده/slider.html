@@ -1,0 +1,122 @@
+<!DOCTYPE HTML>
+<html dir="rtl" lang="fa">
+<head>
+	<title>Slide</title>
+    
+    <style>
+        body {
+            margin: 0px;
+            background-color: #a6bdce;
+        }
+        #container {
+            position: relative;
+            top: 40px;
+            margin-right: 14.5%;
+            width: 70%;
+            height: 660px;
+        }
+        #image-container {
+            position: absolute;
+            overflow: hidden;
+            width: 100%;
+            height: 560px;
+            border-style: outset;
+            border-color: white;
+            border-width: 5px;
+            background-color: #C7C7C7;
+        }
+        button {
+            position: absolute;
+            top: 580px;
+            border-style: outset;
+            border-width: 2px;
+            border-radius: 23px;
+            width: 14%;
+            height: 46px;
+            background-color: #50A2DC;
+            text-align: center;
+            font-family: Nazanin;
+            font-size: 20px;
+            color: white;
+        }
+        #previous {
+            right: 87%;
+            background-color: #E05D5D;
+        } 
+    </style>
+</head>
+
+<body>
+
+    <div id="container">
+        <div id="image-container">
+            <img id="img" src="./1.jpg" style="width: 100%; height: 100%;" />
+        </div>
+        
+        <div id="button-container">
+            <button id="next" onmouseover="color(next)" onmouseout="recolor(next)" onclick="nextSlide()">بعدی</button>
+            <button id="previous" onmouseover="color(previous)" onmouseout="recolor(previous)" onclick="previousSlide()">قبلی</button>
+        </div>
+    </div>
+
+    <script>
+        function color(x) {
+            // این تغیرات مثل هاور کار میکنه , داریم میگیم که وقتی رفت روش فلان تغیرات اعمال بشه 
+            x.style.backgroundColor = 'rgb(170, 181, 19)'
+            x.style.boxShadow = '0 9px #999'
+        }
+        
+        // اینم ادامه بالاییه اما این برای موقعیه که میگیم موس از روش برداشته شد هیچ کار نکن
+        function recolor(x) {
+            x.style.backgroundColor = ''
+            x.style.boxShadow = ''
+        }
+        
+        // حالا یک متغیر تعریف میکنیم و میگیم تو به صورت اولیه مساوی با صفر هستی
+        x = 0
+
+        // حالا آرایه هارو درست میکنیم که به صورت رشته =نوشته شده (ما توی ایمیج داخل اچ دی ام ال هم از عکس صفرم این آرایه استفاده کردیم , ینی عنصر اول)
+        var src = new Array('./1.jpg', './2.jpg', './3.jpg', './4.jpg', './5.jpg', './6.jpg', './7.jpg')
+        
+        // حالا یک تابع درست میکنیم برای دکمه عکس بعدی و داخلش شرط هامون رو میگیم
+        function nextSlide() {
+
+            // میگیم که اگر متغیر ایکس ما چه از نظر رشته و چه از نظر مقدار مساوی با عکس یا عنصر ششم ما در آرایه شد 
+            if(x === 6){
+                x = 1
+            }
+
+            // و اینجا بیرون از شرط میگیم کخ بش اضافه کن
+            x = x + 1
+
+            // اینجا ام میگیم اس ار سی ایمیج داخل اچ دی ام ال رو بگیر و اس ار سی متغری که بالا تعریف کردیم رو بزار جاش 
+            img.src = src[x]
+        }
+        
+
+        // اینم همونه اما برای دکمه بازگشت عکسه
+        function previousSlide() {
+
+        // اینجا میگیم اگر عکس اول ما یا مقدار صفر ما از نظر مقدار یا رشته مساوی با صفر بود 
+            if(x === 0){
+                x = 7
+            }
+
+            // بالا گفتیم اگر متغیر مساوی با ارایه هفتم شد اینجا یکی یکی کم کن
+            x = x - 1
+            img.src = src[x]
+        }
+        
+        // اینم برای تایم دادن به اسلایدره 
+        setInterval(() => {
+
+            // اگر متغیر با شیش مساوی شد یکی یکی اضافه بشه
+            if(x === 6){
+                x = 1
+            }
+            x = x + 1
+            img.src = src[x]
+        }, 5000)
+    </script>
+</body>
+</html>

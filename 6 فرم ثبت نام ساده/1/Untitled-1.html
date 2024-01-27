@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+body{
+    background-image: url('./Steam-Background-Neon-Style-scaled.jpg');
+
+}
+
+/*کل فرم ثبت نام*/
+.coll{
+   background-image: url('./master_groph_7-2_5_auto_230.png');
+   width: 368px;
+   height: 230px ;
+   position: relative;
+   vertical-align: top;
+    top: 150px;
+    border-radius: 20px;
+    box-shadow: 1px 1px 10px 10px black;
+
+}
+
+
+/*منویی که روی فرم ثبت نام*/
+#absu{ 
+background-image: url('./tn_WallpaperGram.IR_1562529121_z20694.jpg');
+width: 200px;
+height: 60px;
+border-radius: 20px;
+box-shadow:1px 1px 6px 6px black;
+position: relative;
+vertical-align: top;
+top: -30px;
+font-size: 18px;
+font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+font-weight: bold;
+font-style: normal;
+color: blanchedalmond;
+
+}
+ .class{
+background-image: url('./tn_WallpaperGram.IR_1562529121_z20694.jpg');
+width: 100px;
+height: 25px;
+font-size: 20px; 
+font-family: 'Gill Sans','Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+color: cornsilk;
+box-shadow: 1px 1px 3px 3px black;
+ }
+
+ /* ینی همون که موس بره روش یه رنگ و یه حالت دیگه ایجاد بشه */
+ .class:hover{
+    background-color: lightslategray;
+ }
+ 
+/* ینی وقتی کلیک شد حالت دکمه ایجاد بشه */
+.class:active{
+    /* اینست داخل اون المنت رو شدو میده  */
+    box-shadow: 1px 1px 1px #000 inset;
+    padding: 1px ;
+}
+</style>
+</head>
+<body>
+    
+<center>
+<div class="coll">
+    <div id="absu"><p><br>فرم ثبت نام</p></div>
+<table  dir="rtl" cellspacing="5px">
+        <tr>
+            <td>
+                <input style="color: cornsilk; background-image: url('./tn_WallpaperGram.IR_ws1588217646_76993.jpg'); height: 20px; border-radius: 10px; box-shadow: 1px 1px 1px 1px black; border: 1px double black;" class="tab" type="text" placeholder="نام کاربری"        id="usernane"  onkeydown="filter(event)">
+            </td>
+            <td>
+                <div><img src="./icons8-name-64.png" width="27px" height="27px"></div>
+            </td>
+        </tr>
+  
+        <tr>
+            <td>
+                <input style="color: cornsilk; background-image: url('./tn_WallpaperGram.IR_ws1588217646_76993.jpg'); height: 20px; border-radius: 10px; box-shadow: 1px 1px 1px 1px black; border: 1px double black;" type="password" placeholder="رمز عبور"      id="password"  onkeydown="filterr(event)">
+           </td>
+            <td>
+               <div><img src="./icons8-password-64.png" width="27px" height="27px"></div>
+           </td>
+        </tr>
+            
+        <tr>
+            <td>
+               <input style="color: cornsilk; background-image: url('./tn_WallpaperGram.IR_ws1588217646_76993.jpg'); height: 20px; border-radius: 10px; box-shadow: 1px 1px 1px 1px black; border: 1px double black;" type="password" placeholder="رمز عبور مجدد" id="apass"    onkeydown="ffilter(event)">
+            </td>
+            <td>
+                <div><img src="./icons8-password-64.png" width="27px" height="27px"></div>
+            </td> 
+        </tr>
+ 
+        <tr>
+            <td>
+               <button onclick="show()" class="class" >ثبت</button>
+            </td>
+            <td>
+                <div><img src="./icons8-eye-48.png" width="20px" height="20px"  onclick="password.type='text'" ></div>
+            </td>
+        </tr>
+
+</table>
+</div>
+<!--
+<div style="color: blanchedalmond; vertical-align: top; display: inline-block ; position: absolute; font-size: 18px; top: 455px; right: 454px;">نمایش فرم ثبت نام</div>
+<div id="show1"style="color: cornsilk; background-image: url('./tn_WallpaperGram.IR_1562529121_z20694.jpg');size: cover; border: 1px solid black ; box-shadow: 1px 1px 5px 6px black; margin-top:200px; width: 300px; height:100px; border-radius:20px;"  ></div>
+-->
+</center>
+
+<script>
+
+function show(){
+ // تعریف متغیرها
+
+ 
+ // گرفتن چیزی که کاربر وارد میکنه
+ username = document.getElementById("password").value;
+ userpassword = document.getElementById("apass").value;
+
+ 
+ // گرفتن تگ دیو از صفحه برای نمایش خروجی
+ //result = document.getElementById("show1");
+ 
+ // تعریف رمز مجدد و رمز اصلی
+ my_user_pass = "amir";
+ my_user_password = "amir";
+ 
+ // ایجاد شرط های مختلف برای چک کردن رمزمجدد و رمز
+ if ( username == "" && userpassword == "" ){
+alert("لطفا فرم های گذر واژه را وارد کنید");
+//یعنی : هیچی  وارد نکردی
+//result.innerHTML = "لطفا فرم های گذر واژه را وارد کنید";
+ }
+ else if ( username == my_user_pass && userpassword != my_user_password ){
+alert("لطفا رمزمجدد را وارد کنید");
+// یعنی : رمز اصلی درسته ولی رمز مجدد اشتباهه
+//result.innerHTML = "لطفا رمزمجدد را وارد کنید";
+ }
+ else if ( username != my_user_pass && userpassword == my_user_password ){
+alert("لطفا ابتدا رمز را وارد کنید");
+// یعنی :  رمز اصلی اشتباه می باشد ولی رمز مجدد صحیحه
+//result.innerHTML = "لطفا ابتدا رمز را وارد کنید";
+ }
+ else if ( username == my_user_pass && userpassword == my_user_password ){
+alert("ایول درسته");
+// یعنی :  رمز اصلی و رمزمجدد صحیحه
+//result.innerHTML = "ایول درسته";
+ }
+ else{
+ alert("رمز اشتباهه");
+ //یعنی : رمز اصلی یا رمزمجدد اشتباهه  
+ //result.innerHTML = "رمز اشتباهه";
+ }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+//یک فانکشن برای اینکه نگذاریم + ,_ .*,&,و......
+
+function filter(p){
+var name=p.keyCode
+console.log(name)
+
+// اگر متغیر نام این هارو داشت نگذار تایپ بشه
+
+if(name == 49 || name == 50 || name == 51 || name == 52 || name == 53 || name == 54 || name == 55 || name == 56 ){
+event.preventDefault();
+alert('اشتباه است!   لطفا از دکمه اینتر ,دکمه شیفت , اعداد و کارکتر ها مانند *,@ ,... استفاده نکنید')
+//error.innerHTML=`<p style="">اشتباه</p>`;
+}else{
+     // وگرنه آزاده که هر چیزی بنویسه
+   // error.innerHTML=``
+}
+
+
+}
+
+
+
+//
+
+
+
+function filterr(p){
+var namee=p.keyCode
+console.log(namee)
+
+// اگر متغیر نام این هارو داشت نگذار تایپ بشه
+if(  namee == 49 || namee == 50 || namee == 51 || namee == 52 || namee == 53 || namee == 54 || namee == 55 || namee == 56 || namee == nameee){
+event.preventDefault();
+alert('اشتباه است!   لطفا از عدد و # و @ و... استفاده نکنید') //innerHTML=`<p style="">اشتباه</p>`;
+
+}else{
+     // وگرنه آزاده که هر چیزی بنویسه
+    //errorr.innerHTML=``
+}
+
+
+}
+
+
+
+//
+
+
+
+function ffilter(p){
+var nameee=p.keyCode
+console.log(nameee)
+
+// اگر متغیر نام این هارو داشت نگذار تایپ بشه
+if( nameee == 49 || nameee == 50 || nameee == 51 || nameee == 52 || nameee == 53 || nameee == 54 || nameee == 55 || nameee == 56 ){
+event.preventDefault();
+alert('اشتباه است!   لطفا از عدد و # و @ و... استفاده نکنید')
+//eerror.innerHTML=`<p style="">اشتباه</p>`;
+
+}else{
+    // وگرنه آزاده که هر چیزی بنویسه
+   // eerrorr.innerHTML=``
+}
+
+
+}
+
+
+
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,101 @@
+@font-face {
+  src: url(../fonts/iran.ttf);
+  font-family: "iran";
+}
+@font-face {
+  src: url(../fonts/Ziba.ttf);
+  font-family: "ziba";
+}
+* {
+  box-sizing: border-box;
+  font-family: "iran";
+}
+:root {
+  --bg-color-primary: #3eceee;
+  --bg-color-secandary: #fff;
+  --color-price: #ff0000;
+  --color-card-line: #522a8e;
+}
+body {
+
+  direction: rtl;
+  margin: 0;
+  padding: 0;
+  background-color: var(--bg-color-primary);
+}
+
+/* start the products */
+.products {
+  display: flex;
+  justify-content: space-around;
+  background-color: var(--bg-color-secandary);
+  width: 100%;
+  max-width: 100%;
+  text-align: center;
+  padding: 1rem;
+  margin: 3rem;
+}
+.products .product {
+  width: 450px;
+  padding: 15px;
+  margin: 35px;
+}
+.products .product .producr_img img {
+  width: 70%;
+  height: 197px;
+  border-radius: 10px;
+}
+.products .product .product_title {
+  font-size: 18px;
+}
+.products .product .product_price {
+  font-size: 13px;
+  font-weight: bolder;
+  color: var(--color-price);
+}
+/* end of products */
+
+/* start the all products & price */
+.cart {
+  background-color: var(--bg-color-secandary);
+  width: 100%;
+  height: auto;
+  text-align: center;
+  padding: 1rem;
+  margin: 3rem;
+  border-radius: 15px;
+}
+.cart .cart_line {
+  border: 1px solid var(--color-card-line);
+  width: 85%;
+  margin: 20px auto;
+}
+.cart .show_number_product{
+  background-color: rgba(24, 23, 23, 0.15);
+  border-radius: 4px;
+  box-shadow: 0px 0px 3px 4px rgba(114, 46, 46, 0.201);
+  width: 85%;
+  padding: 9px;
+  margin: 15px auto;
+}
+.cart .cart_item {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  direction: rtl;
+  padding: 15px;
+  margin-top: 30px 0;
+}
+.cart .cart_item .cart_item_title {
+  font-size: 14px;
+  padding-top: 10px;
+  font-weight: bold;
+}
+
+.cart .cart_total-price {
+  margin-top: 30px;
+  font-weight: bolder;
+  color: var(--color-price);
+
+}
+/* end of all products & price */

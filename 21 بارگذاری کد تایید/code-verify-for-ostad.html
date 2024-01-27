@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .verify-code {
+            width: 300px;
+            text-align: center;
+            padding: 1em 0.5em;
+            box-shadow: 0 0 6px silver;
+            margin: 0 auto;
+
+        }
+
+        input {
+            text-align: center;
+            padding: 8px;
+            border-radius: 15px;
+            width: 20px;
+            margin: 0 4px;
+            border: 1px solid gray;
+            background-color: rgb(236, 234, 234);
+        }
+
+        h2 {
+            direction: rtl;
+            border-bottom: 2px solid gray;
+            padding-bottom: 8px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="verify-code">
+        <h2>کد ارسال شده را وارد نمایید.</h2>
+        <form action="mailto:saied@gmail.com" method="get">
+            <input minlength="1" maxlength="1" class="All_input" type="text" />
+            <input minlength="1" maxlength="1" class="All_input" type="text" />
+            <input minlength="1" maxlength="1" class="All_input" type="text" />
+            <input minlength="1" maxlength="1" class="All_input" type="text" />
+        </form>
+    </div>
+
+    <script src="./1 not me/jquery-3.6.0.min.js"></script>
+    <script>
+        $.ajax({
+            url: 'https://api.digikala.com/v1/search/?q=%D9%86%DB%8C%D8%B3%D8%A7%D9%86',
+            method: 'get',
+            data:{
+                // username: 'ali',
+                // family: 'alavi'
+            },
+            beforeSend: function (params) {
+                // show loading
+            },
+            success: function (response) {
+                console.log(response);
+            },
+            error: function (xhr) {
+                
+            },
+            complete: function (params) {
+                // remove loading
+            }
+        })
+    </script>
+    <script>
+        // 1
+        var x = console.log('Hello');
+        $('input').keyup((e)=>{
+            // console.log(e.target.value.length);
+            console.log($(this));
+            if (e.target.value.length > 1) {
+               $(this).next().focus()
+            }
+        }
+        )
+
+        // 2
+        // $("input").keydown(
+        //     function () {
+        //     $(".verify-code input").css("background-color", "yellow");
+        //     }
+        // )
+
+        // 3
+        // $('.verify-code input').on(" keydown ", function (e) {
+        //     if ($(this).val()) {
+        //         $(this).next().focus();
+        //     }
+        // });
+
+    </script>
+</body>
+
+</html>

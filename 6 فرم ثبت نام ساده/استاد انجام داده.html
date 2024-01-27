@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    .error{
+        width: 350px;
+        background-color: rgb(241, 127, 127);
+        
+        direction: rtl;
+        margin: 0 auto
+    }
+    .login{
+        width: 350px;
+        background-color: wheat;
+        padding: 2em;
+        direction: rtl;
+        margin: 0 auto
+    }
+    .inp{
+        width: 70%;
+        margin-bottom: 8px;
+    }
+    .btn{
+        background-color: rgb(59, 216, 59);
+        padding: 8px;
+        border: unset;
+        box-shadow: 0px 0px 6px silver;
+    }
+    .label{
+        width: 26%;
+        display: inline-block;
+    }
+    </style>
+</head>
+<body>
+ 
+    <div class="login">
+        <label class="label" for="username">نام کاربری</label>
+        <input class="inp" type="text" id="username" onkeydown="filter(event)">
+
+        <label class="label" for="pass">رمز عبور</label>
+        <input class="inp" type="password" name="" id="pass">
+
+        <label class="label" for="pass_conf">تکرار رمز عبور</label>
+        <input class="inp" type="password" name="" id="pass_conf">
+       
+        <button class="btn" onclick="sub()">ثبت نام</button>
+    </div>
+    <div id="msg" class="error">
+
+    </div>
+    
+    <div id="countdown">
+
+    </div>
+</body>
+</html>
+
+<script>
+    function filter(e) {
+        // console.log(e)
+        if (e.keyCode == 106) {
+            msg.innerHTML = `
+                <p style="padding: 2em;">
+                    کاراکتر ورودی غیر مجاز است!
+                </p>
+            `;
+            e.preventDefault()
+        }
+    }
+
+
+
+    function sub() {
+        // console.log(document.getElementById('pass').textLength)
+        if (username.value == '') {
+            msg.innerHTML = `
+                <p style="padding: 2em;">
+                    نام کاربری را پر کنید!
+                </p>
+            `;
+        }else{
+            if (pass.textLength < 6) {
+                msg.innerHTML = `
+                    <p style="padding: 2em;">
+                        رمز عبور نبایستی کمتر از شش کاراکتر باشد!
+                    </p>
+                `;
+                console.log(msg)
+            }else{
+                if (pass.value == pass_conf.value) {
+                    msg.style.backgroundColor = 'rgb(195, 245, 179)'
+                    msg.innerHTML = `
+                    <p style="padding: 2em;">
+                        خوش آمدید
+                    </p>
+                `;
+                }else{
+                    msg.innerHTML = `
+                    <p style="padding: 2em;">
+                        رمز های عبور مطابقت ندارد
+                    </p>
+                `;
+                }
+            }
+        }
+    }
+</script>
+
+<script>
+    var x = 120;
+    setInterval(() => {
+        x = x - 1;
+        countdown.innerHTML = x
+        if( x == 115){
+            countdown.style.color = 'red    '
+        }
+    }, 1000);
+
+    setTimeout(() => {
+        alert('after 5 seconds')
+    }, 5000);
+</script>

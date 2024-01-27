@@ -1,0 +1,183 @@
+
+/*  proje jadval 3 */
+.button{
+display: inline-block;
+position: absolute;
+top: 10px;
+right: 300px;
+background-color: burlywood;
+box-shadow: 2px 2px 10px 10px burlywood ;  
+margin:20px; 
+padding: 10px;
+width: 90px;
+color: black;
+font-size: 20px;
+font-family: 'Courier New', Courier, monospace;
+font-weight: bolder;
+font-style: normal;
+
+}
+.button-2{
+
+    display: inline-block;
+    position: absolute;
+    top: 10px;
+    left: 300px;
+    background-color: burlywood;
+    box-shadow: 2px 2px 10px 10px burlywood ;  
+    margin:20px; 
+    padding: 10px;
+    width: 90px;   
+    color: black;
+    font-size: 20px;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bolder;
+    font-style: normal;
+
+
+}
+
+/*  background all safhe*/
+#a{
+    background-image: url('unnamed.jpg');
+    width: 100%;
+    height: 100%;
+    background-repeat: repeat;
+}
+
+
+
+/*  proje aks 1  */
+.aks{
+position: absolute;
+display: inline-block;
+top: 200px;
+left: 120px;
+border: black;
+
+box-shadow: 1px 1px 4px 4px;
+
+
+}
+.batenhash1{
+    display: inline-block;
+    position: absolute;
+    top: 950px;
+    right: 50px;
+    box-shadow: 1px 1px 20px 20px ;
+
+}
+.batenhash2{
+    display: inline-block;
+    position: absolute;
+    top: 950px;
+    right: 300px;
+    box-shadow: 1px 1px 20px 20px ;
+
+}
+.batenhash3{
+    display: inline-block;
+    position: absolute;
+    top: 950px;
+    left: 300px;
+    box-shadow: 1px 1px 20px 20px ;
+
+}
+.batenhash4{
+    display: inline-block;
+    position: absolute;
+    top: 950px;
+    left: 50px;
+    box-shadow: 1px 1px 20px 20px ;
+
+}
+
+
+
+
+
+/* proje 2 sabt name  */
+.tush1{
+    background-color: cadetblue;
+    box-shadow:1px 1px 20px 20px cadetblue;
+    position: absolute;
+    display: inline-block;
+    right: 50px;
+    top: 1300px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    
+
+}
+.tush2{
+    background-color: cadetblue;
+    box-shadow:1px 1px 20px 20px cadetblue;
+    position: absolute;
+    display: inline-block; 
+    right: 300px;
+    top: 1300px;
+    color: black;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+
+
+}
+.tush3{
+    background-color: cadetblue;
+    box-shadow:1px 1px 20px 20px cadetblue;
+    position: absolute;
+    display: inline-block; 
+    left: 300px;
+    top: 1300px;
+    color: black;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+
+}
+
+.tush4{
+    background-color: cadetblue;
+    box-shadow:1px 1px 20px 20px cadetblue;
+    position: absolute;
+    display: inline-block; 
+    left: 50px;
+    top: 1300px;
+    color: black;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+
+}
+
+.click1{
+    background-color: cadetblue;
+    box-shadow:1px 1px 20px 20px cadetblue;
+    position: absolute;
+    display: inline-block; 
+    left: 50px;
+    top: 1390px;
+    color: black;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+
+}
+
+.click2{
+    background-color: cadetblue;
+    box-shadow:1px 1px 20px 20px cadetblue;
+    position: absolute;
+    display: inline-block; 
+    left: 140px;
+    top: 1390px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+
+}
+.namayesh{
+    background-color: blanchedalmond;
+    display: inline-block;
+    position: absolute;
+    top: 1390px;
+    right: 50px;
+    box-shadow: 2px 2px 10px 10px cadetblue;
+    width: 600px;
+    height: 150px;
+    margin-bottom: 20px;
+    color: dimgrey;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-weight: bolder;
+    font-style: normal;
+}

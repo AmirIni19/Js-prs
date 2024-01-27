@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Machin</title>
+    <style>
+        .main-div {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: row;
+            box-shadow: 1px 1px 10px black;
+            border-radius: 5px;
+        }
+
+        .table-main {
+            border: none;
+            border: 1px solid black;
+            width: 100%;
+            height: 80vh;
+            text-align: center;
+            box-shadow: inset 1px 1px 17px black;
+            border-radius: 5px;
+        }
+
+        .table-main td {
+            background-color: rgba(24, 24, 24, 0.623);
+            border: 4px solid rgb(42, 135, 189);
+            border-radius: 12px;
+            box-shadow: inset 1px 1px 9px black;
+            color: #FFFF;
+            font-size: larger;
+            font-weight: 900;
+            font-style: bold;
+
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="show-mach"></div>
+
+    <script src="./jquery-3.6.0.min.js"></script>
+    <script>
+        var iNumbers_row1 = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+        $(".show-mach").html(`
+        
+        <div class="main-div">
+        <table class="table-main" >
+
+            <!-- 0 -->
+            <tr>
+                <td>X</td>
+                <td>${iNumbers_row1[0]}</td>
+                <td>${iNumbers_row1[1]}</td>
+                <td>${iNumbers_row1[2]}</td>
+                <td>${iNumbers_row1[3]}</td>
+                <td>${iNumbers_row1[4]}</td>
+                <td>${iNumbers_row1[5]}</td>
+                <td>${iNumbers_row1[6]}</td>
+                <td>${iNumbers_row1[7]}</td>
+                <td>${iNumbers_row1[8]}</td>
+            </tr>
+
+            <!-- 1 -->
+            <tr>
+                <td>${iNumbers_row1[0]}</td>
+                <td>${iNumbers_row1[0]}</td>
+                <td>${iNumbers_row1[1]}</td>
+                <td>${iNumbers_row1[2]}</td>
+                <td>${iNumbers_row1[3]}</td>
+                <td>${iNumbers_row1[4]}</td>
+                <td>${iNumbers_row1[5]}</td>
+                <td>${iNumbers_row1[6]}</td>
+                <td>${iNumbers_row1[7]}</td>
+                <td>${iNumbers_row1[8]}</td>
+            </tr>
+
+            <!-- 2 -->
+            <tr>
+                <td>${iNumbers_row1[1]}</td>
+                <td>${iNumbers_row1[0] * 2}</td>
+                <td>${iNumbers_row1[1] * 2}</td>
+                <td>${iNumbers_row1[2] * 2}</td>
+                <td>${iNumbers_row1[3] * 2}</td>
+                <td>${iNumbers_row1[4] * 2}</td>
+                <td>${iNumbers_row1[5] * 2}</td>
+                <td>${iNumbers_row1[6] * 2}</td>
+                <td>${iNumbers_row1[7] * 2}</td>
+                <td>${iNumbers_row1[8] * 2}</td>
+            </tr>
+
+            <!-- 3 -->
+            <tr>
+                <td>${iNumbers_row1[2]}</td>
+                <td>${iNumbers_row1[0] * 3}</td>
+                <td>${iNumbers_row1[1] * 3}</td>
+                <td>${iNumbers_row1[2] * 3}</td>
+                <td>${iNumbers_row1[3] * 3}</td>
+                <td>${iNumbers_row1[4] * 3}</td>
+                <td>${iNumbers_row1[5] * 3}</td>
+                <td>${iNumbers_row1[6] * 3}</td>
+                <td>${iNumbers_row1[7] * 3}</td>
+                <td>${iNumbers_row1[8] * 3}</td>
+            </tr>  
+
+            <!-- 4 -->
+            <tr>
+                <td>${iNumbers_row1[3]}</td>
+                <td>${iNumbers_row1[0] * 4}</td>
+                <td>${iNumbers_row1[1] * 4}</td>
+                <td>${iNumbers_row1[2] * 4}</td>
+                <td>${iNumbers_row1[3] * 4}</td>
+                <td>${iNumbers_row1[4] * 4}</td>
+                <td>${iNumbers_row1[5] * 4}</td>
+                <td>${iNumbers_row1[6] * 4}</td>
+                <td>${iNumbers_row1[7] * 4}</td>
+                <td>${iNumbers_row1[8] * 4}</td>
+            </tr>  
+
+            <!-- 5 -->
+            <tr>
+                <td>${iNumbers_row1[4]}</td>
+                <td>${iNumbers_row1[0] * 5}</td>
+                <td>${iNumbers_row1[1] * 5}</td>
+                <td>${iNumbers_row1[2] * 5}</td>
+                <td>${iNumbers_row1[3] * 5}</td>
+                <td>${iNumbers_row1[4] * 5}</td>
+                <td>${iNumbers_row1[5] * 5}</td>
+                <td>${iNumbers_row1[6] * 5}</td>
+                <td>${iNumbers_row1[7] * 5}</td>
+                <td>${iNumbers_row1[8] * 5}</td>
+            </tr>
+
+            <!-- 6 -->
+            <tr>
+                <td>${iNumbers_row1[5]}</td>
+                <td>${iNumbers_row1[0] * 6}</td>
+                <td>${iNumbers_row1[1] * 6}</td>
+                <td>${iNumbers_row1[2] * 6}</td>
+                <td>${iNumbers_row1[3] * 6}</td>
+                <td>${iNumbers_row1[4] * 6}</td>
+                <td>${iNumbers_row1[5] * 6}</td>
+                <td>${iNumbers_row1[6] * 6}</td>
+                <td>${iNumbers_row1[7] * 6}</td>
+                <td>${iNumbers_row1[8] * 6}</td>
+            </tr>  
+
+            <!-- 7 -->
+            <tr>
+                <td>${iNumbers_row1[6]}</td>
+                <td>${iNumbers_row1[0] * 7}</td>
+                <td>${iNumbers_row1[1] * 7}</td>
+                <td>${iNumbers_row1[2] * 7}</td>
+                <td>${iNumbers_row1[3] * 7}</td>
+                <td>${iNumbers_row1[4] * 7}</td>
+                <td>${iNumbers_row1[5] * 7}</td>
+                <td>${iNumbers_row1[6] * 7}</td>
+                <td>${iNumbers_row1[7] * 7}</td>
+                <td>${iNumbers_row1[8] * 7}</td>
+            </tr>  
+
+            <!-- 8 -->
+            <tr>
+                <td>${iNumbers_row1[7]}</td>
+                <td>${iNumbers_row1[0] * 8}</td>
+                <td>${iNumbers_row1[1] * 8}</td>
+                <td>${iNumbers_row1[2] * 8}</td>
+                <td>${iNumbers_row1[3] * 8}</td>
+                <td>${iNumbers_row1[4] * 8}</td>
+                <td>${iNumbers_row1[5] * 8}</td>
+                <td>${iNumbers_row1[6] * 8}</td>
+                <td>${iNumbers_row1[7] * 8}</td>
+                <td>${iNumbers_row1[8] * 8}</td>
+            </tr>
+
+            <!-- 9 -->
+            <tr>
+                <td>${iNumbers_row1[8]}</td>
+                <td>${iNumbers_row1[0] * 9}</td>
+                <td>${iNumbers_row1[1] * 9}</td>
+                <td>${iNumbers_row1[2] * 9}</td>
+                <td>${iNumbers_row1[3] * 9}</td>
+                <td>${iNumbers_row1[4] * 9}</td>
+                <td>${iNumbers_row1[5] * 9}</td>
+                <td>${iNumbers_row1[6] * 9}</td>
+                <td>${iNumbers_row1[7] * 9}</td>
+                <td>${iNumbers_row1[8] * 9}</td>
+            </tr>
+           
+        </table>
+    </div>
+
+        `)
+    </script>
+</body>
+
+</html>

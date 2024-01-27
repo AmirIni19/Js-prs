@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+
+table{
+ width:100%;
+ border-collapse:collapse;
+}
+
+table td{
+ border:3px solid #9C27B0;
+ text-align:center;
+ padding:5px;
+}
+
+</style>
+</head>
+<body>
+
+<script>
+
+document.write("<div>");
+document.write("<table>");
+
+for ( var a = 1; a < 11; a++ ){
+ document.write("<tr>");
+  for ( var b = 1; b < 11; b++ ){
+   document.write("<td>" + a * b + "</td>");
+  }
+ document.write("</tr>");
+}
+
+document.write("</table>");
+document.write("</div>");
+
+</script>
+
+</body>
+</html>

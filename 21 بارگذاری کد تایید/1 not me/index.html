@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+
+    <title>CodePen - 111111</title>
+
+
+
+
+    <style>
+        html {
+            block-size: 100%;
+            color-scheme: dark light;
+        }
+
+        body {
+            /*   color: #222; */
+            font-family: sans-serif;
+            user-select: none;
+            overflow: hidden;
+            display: grid;
+            place-items: center;
+            min-block-size: 100%;
+        }
+
+        #codeForm {
+            text-align: center;
+            margin: 0 auto;
+            max-width: 1000px;
+            font-size: 20px;
+        }
+
+        #codeForm h2 {
+            font-weight: 300;
+
+        }
+
+        .shrinkable {
+            transition: transform 100ms linear;
+            border: 1px solid grey;
+            border-radius: 10px;
+            padding: .5rem;
+            margin: 0 1rem;
+        }
+
+        .shrinkable.shrink {
+            transform: scale(0.9);
+        }
+
+        #code {
+            transition: transform 100ms linear;
+        }
+
+        #code input {
+            font-size: 50px;
+            width: 70px;
+            height: 70px;
+            text-align: center;
+            border: 1px solid #aaa;
+            border-radius: 10px;
+            margin: 8px;
+        }
+
+        #code input:active,
+        #code input:focus {
+            outline: none;
+            border: 1px solid gray;
+        }
+
+        #code input.error {
+            border: 1px solid red;
+        }
+
+        #code input:disabled {
+            color: #222;
+            background-color: #FFFFFF;
+        }
+
+        #feedback {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            height: 0;
+            overflow: hidden;
+        }
+
+        #feedbackImage {
+            width: 60px;
+            padding: 30px;
+        }
+
+        .growable {
+            transform: scale(0.5);
+            opacity: 0;
+            transition: transform 350ms, opacity 350ms;
+            transition-timing-function: cubic-bezier(0.46, 0.03, 0, 1.58);
+        }
+
+        .growable.grow {
+            opacity: 1;
+            transform: scale(1);
+        }
+
+        input[type="button"] {
+            outline: none;
+            border: none;
+            background-color: transparent;
+            font-family: inherit;
+            text-transform: uppercase;
+            color: inherit;
+            cursor: pointer;
+        }
+
+        #sendButton {
+            padding: 6px 9px;
+            border-radius: 3px;
+            font-size: 20px;
+            border: 1px solid #ddd;
+        }
+
+        #sendButton:hover {
+            background-color: rgb(128, 128, 128, 0.5);
+        }
+    </style>
+
+
+</head>
+
+<body>
+    <section id="codeForm">
+        <h2>Enter verification SMS code</h2>
+        <div id="code" class="shrinkable">
+            <input disabled type="text" /><input disabled type="text" /><input disabled type="text" /><input disabled
+                type="text" /><input disabled type="text" /><input disabled type="text" />
+        </div>
+        <div id="feedback">
+            <img class="growable" id="feedbackImage" alt="feedback">
+            <input class="growable" id="sendButton" type="button" value="Send code again" />
+        </div>
+    </section>
+</body>
+
+<script id="rendered-js">
+    const successURL = "https://c.tenor.com/5wXA61gEUuAAAAAC/conc.gif";
+    const storedCode = "111111";
+    const codeArea = document.getElementById("code");
+    const codeInputs = document.querySelectorAll("#code input");
+    const feedback = document.getElementById("feedback");
+    const feedbackImage = document.getElementById("feedbackImage");
+    const sendButton = document.getElementById("sendButton");
+    let userCode;
+
+
+    init();
+
+    function init() {
+        userCode = "";
+        codeInputs[0].disabled = false;
+        codeInputs[0].focus();
+        for (const codeInput of codeInputs) {
+            codeInput.value = "";
+            codeInput.addEventListener("input", (e) => handleInput(e, codeInput));
+        }
+    }
+
+
+
+    function handleInput(e, codeInput) {
+        const val = e.data || "";
+        codeInput.value = val;
+        const isValid = val.length == 1 && parseInt(val) >= 0 && parseInt(val) < 10;
+        if (!isValid) {
+            codeInput.classList.add("error");
+            return;
+        }
+        userCode += parseInt(val);
+        codeInput.classList.remove("error");
+        codeInput.disabled = true;
+        const nextInput = codeInput.nextSibling;
+        if (nextInput) {
+            nextInput.disabled = false;
+            nextInput.focus();
+        } else {
+            codeInput.blur();
+            codeArea.classList.add("shrink");
+            evaluate(userCode);
+        }
+    }
+
+
+    async function evaluate(code) {
+        const isValid = await serverSideValidation(code);
+        if (isValid) {
+            handleSuccess();
+        } else {
+            handleError();
+        }
+    }
+
+    function handleSuccess() {
+        feedbackImage.src = "https://cdn-icons-png.flaticon.com/512/463/463574.png";
+        feedbackImage.onload = () => {
+            feedbackImage.classList.add("grow");
+            feedback.style.height = "180px";
+            setTimeout(() => {
+                window.location = successURL;
+            }, 1500);
+        };
+    }
+
+
+    function handleError() {
+        feedbackImage.src = "https://cdn-icons-png.flaticon.com/512/463/463612.png";
+        feedbackImage.classList.add("grow");
+        feedback.style.height = "180px";
+        setTimeout(() => {
+            sendButton.classList.add("grow");
+        }, 300);
+    }
+
+    async function serverSideValidation(code) {
+        await new Promise((resolve) => setTimeout(resolve, 1000));
+        const response = code === storedCode;
+        return response;
+    }
+
+
+    sendButton.addEventListener("click", restoreInputs);
+
+    function restoreInputs() {
+        userCode = "";
+        feedbackImage.classList.remove("grow");
+        sendButton.classList.remove("grow");
+        for (const codeInput of codeInputs) {
+            codeInput.value = "";
+        }
+        codeArea.classList.remove("shrink");
+        codeInputs[0].disabled = false;
+        codeInputs[0].focus();
+        feedback.style.height = "0px";
+    }
+//# sourceURL=pen.js
+</script>
+
+
+
+</body>
+
+</html>

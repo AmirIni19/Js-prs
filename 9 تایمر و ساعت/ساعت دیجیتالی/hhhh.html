@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Clock</title>
+    <style>
+
+        /*ابتدا استایل های اولیه برای صفحه*/
+*{
+    margin: 0;
+    padding: 0;
+    /*box-sizing: border-box;*/
+}
+html,
+body{
+    height: 100%;
+    
+}
+body{
+    /*display: grid;
+    place-items: center;*/
+    background-image:url('./IMG_20210614_233250_558.jpg');
+}
+
+/*  و حالا استایل های مربوط به ساعت در روش اول
+.container{
+    background: #131419;
+    height: 120px;
+    width: 550px;
+    line-height: 120px;
+    text-align: center;
+    padding: 0 5px;
+    box-shadow: -3px -3px 7px rgba(225, 225, 225, 0.05),
+                 3px 3px 5px rgba(0, 0, 0, 0.5)
+}*/
+/*
+.container .clock{
+    font-size: 60px;
+    color: cyan;
+    letter-spacing: 5px;
+    font-family: 'Orbitron' , sans-serif;
+}*/
+
+
+/*  و حالا استایل های مربوط به ساعت در روش دوم*/
+.clock{
+    width: 440px;
+    height: 140px;
+    background-image: url('./f.gif');
+    border-radius: 12px;
+    position: relative;
+    top:250px;
+    left: 320px;
+    box-shadow: -3px -3px 7px 10px rgba(225, 225, 225, 0.05),
+                 3px 3px 5px 13px rgba(0, 0, 0, 0.5);
+
+    /*به اندازه نصف عرض برگرد به سمت چپ  و به اندازه نصف ارتفاع برگرد به بالا*/
+    transform: translate(-50% , -50);
+}
+
+/*ینی تمام دیو هایی که در کلاس کلاک قرار داره اعمال بشه*/
+.clock div{
+float: left;
+/*ینی عرض یک سوم*/
+width: calc(100% / 3);
+color: cyan;
+text-align: center;
+font-size: 34px;
+margin-top: 50px;
+font-family: 'Orbitron' , sans-serif;
+font-weight: bold;
+font-style: oblique;
+text-shadow: 1px 1px rgb(250, 250, 252)
+}
+.clock:hover{
+    box-shadow: 0 1px 2px 1px rgb(41, 42, 85);
+}
+</style>
+</head>
+
+<body>
+
+<!--روش اول-->
+<!--
+یک دیو مادر که ساعت رو بش سایه بدیم و بعد از ان یک دیو دیگر که داخلش بتوانیم ساعت مان را نشان بدیم
+<div class="container">
+                   <div class="clock"></div>
+</div>
+-->
+
+
+<!--روش دوم-->
+<div class="clock">
+<div id="hour">00</div>
+<div id="minute">00</div>
+<div id="second">00</div>
+</div>
+
+
+
+<script>
+    
+    // روش اول
+/*
+setInterval(()=>{
+const clock = document.querySelector('.clock');
+
+var sec = new Date().getSeconds();
+var min = new Date().getMinutes();
+var hr = new Date().getHours();
+var day = hr >= 12 ? 'PM' : 'AM' ;
+
+sec < 10 ? sec = '0' + sec : sec ;
+min < 10 ? min = '0' + min : min ;
+hr < 10 ? hr = '0' + hr : hr ;
+
+clock.textContent = hr + ':' + min + ':' + sec + '' + day;
+
+},1000)*/
+
+
+// روش دوم
+function clock(){
+    //  (الان)دریاقت ساعت سیستم 
+    var date = new Date();
+    // ایدی ساعت و دقیقه و ثانیه رو بگیر و چیزی که توشه رو بگیر و ساعت نشون بده
+    hour.innerHTML=date.getHours();
+    minute.innerHTML=date.getMinutes();
+    second.innerHTML=date.getSeconds();
+}
+// داریم میگیم تابع ما هر یک ثانیه یک بار اجرا میشه
+setInterval(clock,900)
+
+</script>
+</body>
+</html>

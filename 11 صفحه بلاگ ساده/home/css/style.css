@@ -1,0 +1,157 @@
+html,
+body {
+  min-height: 100%;
+  position: relative;
+  height: 100%;
+  direction: rtl;
+}
+
+/* start the header */
+.header-div {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  max-width: 1100px;
+  min-height: 100%;
+  margin: 0 auto;
+  padding: 30px;
+  background-color: rgba(184, 184, 184, 0.192);
+  border-radius: 10px;
+  box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.384);
+}
+.header-div .header-btn button {
+  border: none;
+  background-color: rgb(187, 188, 190);
+  padding: 10px;
+  border-radius: 6px;
+  box-shadow: 1px 1px 5px rgba(52, 52, 109, 0.904);
+}
+
+.header-div .header-input input {
+  border: none;
+  line-height: none;
+  width: 300px;
+  height: 40px;
+  background-color: rgba(204, 205, 207, 0.623);
+  border-radius: 6px;
+  box-shadow: 1px 1px 5px rgba(52, 52, 109, 0.904);
+}
+/* end of header */
+
+/* start the grids */
+.grid-container {
+  max-width: 1100px;
+  min-height: 100%;
+  margin: 0 auto;
+  text-align: justify;
+  padding: 15px;
+  background-color: rgba(233, 233, 233, 0.192);
+  border-radius: 10px;
+  box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.384);
+  position: relative;
+}
+
+.grid-container:after {
+  content: "";
+  display: inline-block;
+  width: 40%;
+}
+
+.grid-item {
+  width: 300px;
+  height: 300px;
+  display: inline-block;
+  background-color: rgb(214, 214, 214);
+  margin-bottom: 8px;
+  margin-top: 8px;
+  overflow: hidden;
+  border-radius: 6px;
+  box-shadow: 1px 1px 1px rgb(187, 187, 187);
+}
+
+.grid-item .grid-item-img {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  float: right;
+  padding-right: 18px;
+  padding-left: 10px;
+  padding-top: 18px;
+  padding-bottom: 12px;
+}
+
+.grid-item .grid-item-img img {
+  border-radius: 9px;
+  box-shadow: 1px 1px 1px rgb(187, 187, 187);
+}
+
+.grid-item .grid-item-grid-text {
+  font-size: 10px;
+  font-weight: 600;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  padding: 10px;
+}
+
+.grid-item .grid-item-btn-div {
+  margin: 10px;
+}
+
+.grid-item .grid-item-btn {
+  font-size: 10px;
+  font-weight: 600;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  margin: 10px;
+}
+
+.grid-item-btn-div .grid-item-btn {
+  border: none;
+  background-color: rgb(185, 187, 192);
+  padding: 10px;
+  border-radius: 6px;
+  box-shadow: 1px 1px 2px rgba(130, 130, 131, 0.904);
+}
+
+.animate {
+    opacity: 0.3;
+  }
+
+  /* start the grids */
+/* 
+  
+.animate {
+  display: flex;
+  position: absolute;
+  top: 50%;
+  right: 45%;
+  
+}
+
+.animate div {
+  width: 50px;
+  height: 50px;
+  background-color: black;
+  border-radius: 50%;
+  margin-left: 15px;
+  animation: move 1s ease-in-out infinite alternate;
+}
+
+.animate div:nth-child(1) {
+    animation-delay: -0.4s;
+  }
+  
+  .animate div:nth-child(2) {
+    animation-delay: -0.2s;
+  }
+  
+  @keyframes move {
+    from {
+      transform: translateY(-100%);
+    }
+    to {
+      transform: translateY(100%);
+    }
+  }
+
+
+ */
